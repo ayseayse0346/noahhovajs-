@@ -62,3 +62,30 @@ console.log(notlar1);
 console.log(ellidenküçnotlar1);
 console.log(ellidenbüynotlar1);
 
+/* =========== FOR OF ========   */
+
+const students = ["ahmet", "mehmet", "ismet", "saffet", "ahmet", "saffet"]
+
+const strArrayUpperCase = (students) => {
+  let upperCasedArray = []
+
+  for (let student of students) {
+    upperCasedArray.push(student.toUpperCase())
+  }
+  return upperCasedArray
+}
+const myArray = strArrayUpperCase(students)
+console.log(myArray)
+
+
+
+
+
+//ÖDEVVVV?*-------------------------------------------------------
+//* SORU: ogrenciler dizisinde ogrenci isimleri saklanmaktadir.
+//* ogrencileri aramamizi saglayacak ve aranilan ogrenciden
+//* ne kadar sayida bulunuldugunu ana programa dondurecek bir
+//* fonksiyon yaziniz. Eger aranilan isimde bir ogrenci yok ise
+//* fonksiyon "ogrenci bulunamadi" dondurulmelidir.
+//*--------------------------------------------------------
+const ogrenciler = ["ahmet", "mehmet", "ismet", "saffet", "ahmet", "saffet"]
