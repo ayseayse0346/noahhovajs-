@@ -89,3 +89,6 @@ console.log(myArray)
 //* fonksiyon "ogrenci bulunamadi" dondurulmelidir.
 //*--------------------------------------------------------
 const ogrenciler = ["ahmet", "mehmet", "ismet", "saffet", "ahmet", "saffet"]
+
+
+
