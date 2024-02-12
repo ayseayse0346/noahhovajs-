@@ -44,3 +44,34 @@ console.log(notlar);
 // console.log(notlar);
 
 // !foreach return yapmaz-->void functiondur.(teknik terimi budur.).
+
+
+/*----------ARRAY MAP() METODU----- */
+// orjinal dizinin kopyasını modifiye edersk döndürür.
+
+let x = [2,3,4,5]
+let y = x.map((s)=> s*2)
+console.log(y);  //verdiğimiz kriterlere göre transforme olumuş.return ediyor.
+
+// ?Bir dizideki tüm isimleri Büyük harfe dönüştüren uygulamayı yazınız.
+
+let isimler = ["Mustafa","Murat","Ahmet","Mustafa","Ayşe","canan"]
+
+let copyedNames = isimler.map((name)=>name.toUpperCase())
+console.log(copyedNames);
+
+// ?Örnek :
+/*
+tlprices dizisindeki rakamların euro ve dolar karşılıklarını hesaplatarak yeni dizilere kaydediniz.
+
+*/
+const euro = 32.97
+const dolar = 30.5
+
+const İPhoneTL = [90000,75000,60000,40000,30000]
+
+const İphoneDolar= İPhoneTL.map((tl)=>(tl/dolar ).toFixed(1) )  //math.trunc ile sadece tam kısımlarını alabiliriz.
+console.log(İphoneDolar);
+
+const İphoneEuro= İPhoneTL.map((tl)=>Math.trunc(tl/euro ) )  
+console.log(İphoneEuro);
