@@ -75,3 +75,36 @@ console.log(İphoneDolar);
 
 const İphoneEuro= İPhoneTL.map((tl)=>Math.trunc(tl/euro ) )  
 console.log(İphoneEuro);
+
+
+/*
+ -----FİLTER METHOD------------ bu methodda değer döndürür.yine liste döner. map gibi
+ */
+
+ let fiy = [31000,20000,15000,75000]
+
+let fiyat= fiy.filter((filt)=>filt>30000)
+console.log(fiyat);
+
+// ?ÖRNEK
+// ömaaşları ellibinden büyük olanları seçmek istiyorum
+const maaslar = [90000,75000,60000,40000,50000,30000]
+
+const ellidenBüyük = maaslar.filter((maas)=> maas>50000)
+console.log(ellidenBüyük);
+
+
+// ?örnek mması 30000 ile 50000 arasında olanları seç
+
+const düşükMaas = maaslar.filter((maas)=> maas>=30000 && maas<=50000 )
+console.log(düşükMaas);
+
+/*
+----------(chaining)PIPLİNE (HAT)------- 
+*/
+
+// ?örnek  maası 50000den   az olanlar %20 zam yapalım
+
+const salary = [90000,75000,60000,40000,50000,30000]
+const zamlıMaaslar = salary.filter((maas)=> maas<=50000).map((maas)=> maas*1.2)
+console.log(zamlıMaaslar);
