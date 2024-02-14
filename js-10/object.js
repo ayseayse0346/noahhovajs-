@@ -32,8 +32,9 @@ const kişil = {
     ehliyet:true,
     diller:["english","arabic"],
     notlar:{mat:"AA",turk:"AB"},
+    doğumtar:1990,
 yashesapla:function(){
-    return new Date().getFullYear()-this.doğum
+    return new Date().getFullYear()-this.doğumtar
 }
 }
 
@@ -41,8 +42,107 @@ yashesapla:function(){
 // !global alanda yazılan this ise global objeyi refere eder.
 // !window tarayıcının her şeyini barındıran temel bir objeidr.
 
+// ----OKUMA-------------**
+// ?A- ) . notasyonu ile erişim
 console.log(this); //global alanda (window nestesi gösterir.)
 console.log(kişil.maas);
 console.log(kişil.diller);
 console.log(kişil.diller[1]);
 console.log(kişil.notlar.mat); //AA 
+console.log(kişil.yashesapla());
+// console.log(new Date().getDay());
+
+// ? square bracket ile erişim
+
+console.log(kişil["kimlikno"]);
+console.log(kişil["notlar"]["turk"]);
+
+// const secici = prompt("kişinin hangi biligisini oğrenmek istersiniz?isim,soyisim,kimlikno,maas,doğum,yashesapla??")
+
+// console.log(kişil[secici]); 
+
+// -------YAZMA----------**
+
+kişil.doğumtar = 2000
+console.log(kişil);
+
+kişil.diller ="Türkçe-ingilizce"
+console.log(kişil);
+
+kişil.kilo = 80
+console.log(kişil);  //olmayan property de ekleyebiliriz ve orjinal diziyi yazdırdıdığımızda görürüz.
+
+//! square brachlet yöntemiyle gösterimi
+kişil["ehliyet"] = false
+
+/*----NESTED OBJELER----- */
+
+// ! objeler itere edilebilir yapılar değildir.
+
+const kişill = {
+    ahmet:{soyisim:"yılmaz",kimlikno:"1231456758",
+    doğum:"01/01/1985",
+    maas:70000},
+    mehmet :{
+        soyisim:"yıldırım",kimlikno:"1231456759",
+        maas:7000
+    }
+ 
+}
+
+console.log(kişill.ahmet.kimlikno);
+console.log(kişill.mehmet.maas);
+
+const isim = "ahmet"
+console.log(kişill[isim]);
+
+//********************************************************
+//* JSON => Javascript Object Notation
+//********************************************************
+
+const people = [
+  {
+    isim: "Ahmet",
+    soyİsim: "Yılmaz",
+    kimlikNo: "123123341112",
+    maas: 70000,
+    job: "developer",
+  },
+  {
+    isim: "Mehmet",
+    soyİsim: "Ozturk",
+    kimlikNo: "1696571112",
+    maas: 50000,
+    job: "developer",
+  },
+  {
+    isim: "Canan",
+    soyİsim: "Can",
+    kimlikNo: "33344571112",
+    maas: 90000,
+    job: "tester",
+  },
+]
+
+// const key = prompt(
+//   "Kisilerini hangi bilgisini ogrenmek istersiniz: isim, soyİsim,kimlikNo, maas?"
+// )
+// people.forEach((p) => console.log(p.isim))
+// people.forEach((p) => console.log(p.maas))
+// people.forEach((p) => console.log(p["kimlikNo"]))
+// people.forEach((p) => console.log(p[key]))
+
+//? Maasların toplami
+const toplamMaas = people.reduce((t, p) => t + p.maas, 0)
+console.log(toplamMaas)
+
+//? job, developer olanların isim+soyisim yazdirinz
+
+const devs = people.filter((p) => p.job === "developer")
+console.log(devs)
+
+const devNames = people
+  .filter((p) => p.job === "developer")
+  .map((p) => `${p.isim} ${p.soyİsim}`)
+console.log(devNames)
+
